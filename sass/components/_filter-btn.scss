@@ -1,0 +1,49 @@
+.filter-list {
+  display: flex;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}
+
+.filter-list-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.filter-list-item {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 15px;
+  }
+}
+
+.filter-btn {
+  @media screen and (min-width: 320px) {
+    @include font($fs: 16px, $fw: 500, $lh: 26px);
+  }
+  padding: 6px 22px;
+
+  background-color: var(--secondary-background);
+  font-family: var(--main-font);
+  text-align: center;
+  color: var(--text-color);
+
+  transition: {
+    property: color, background-color, box-shadow;
+    duration: 250ms;
+    timing-function: var(--function-transition);
+  }
+
+  &--active,
+  &:focus,
+  &:hover {
+    color: var(--accessary-color);
+    background-color: var(--accent-color);
+    box-shadow: var(--box-shadow-filter);
+  }
+}
